@@ -37,35 +37,27 @@ class Sudoku:
                         return True
             return False
         
+        def board_update(x,r,c,board):
+            board[r][c] = x
+            return board
+        
         def backtrack(board):
             for r in range(9):
                 for c in range(9):
                     if board[r][c] == '0':
+                        pos_vals = []
                         for x in range(1,10):
                             if check(str(x),r,c,board):
-                                board[r][c] = str(x)
-                                return backtrack(board)
-                        return False
+                                pos_vals.append(str(x))
+                        if pos_vals:
+                            return any([backtrack(board_update(x,r,c,board)) for x in pos_vals])
+                        else:
+                            return False
             return True
-        
+                    
+
+
         return backtrack(self.board)
                                 
 
 
-def main():
-    sudoku = Sudoku(['530070000',
-                    '600195000',
-                    '098000060',
-                    '800060003',
-                    '400803001',
-                    '700020006',
-                    '060000280',
-                    '000419005',
-                    '000080079'])
-    print(sudoku)
-    
-    print(sudoku.solve())
-    
-    print(sudoku)
-    
-main()
