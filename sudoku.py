@@ -33,15 +33,22 @@ class Sudoku:
             ''' helper function to check if x in board[r][c] doesn't clash; returns bool '''
             if x not in board[r]: #valid for row
                 if x not in [board[row][c] for row in range(len(board))]: #valid for col
-                    if x not in [ [board[row][col] for col in range(c//3*3, c//3*3+3)] for row in range(r//3*3, r//3*3+3)]: #valid for 3x3 grid
+                    grid = []
+                    for i in range(r//3*3, r//3*3+3):
+                        for j in range(c//3*3, c//3*3+3):
+                            grid.append(board[i][j])
+                    if x not in grid: #valid for 3x3 grid
                         return True
             return False
         
         def board_update(x,r,c,board):
-            board[r][c] = x
-            return board
+            ''' helper function to update board[r][c] to x and return the new board '''
+            new_board = board[:]
+            new_board[r][c] = x
+            return new_board
         
         def backtrack(board):
+            ''' recursive function to fill empty cells with valid assignments and backtrack when not possible '''
             for r in range(9):
                 for c in range(9):
                     if board[r][c] == '0':
@@ -56,8 +63,8 @@ class Sudoku:
             return True
                     
 
-
-        return backtrack(self.board)
+        board = self.board[:] #duplicate self.board to pass into backtrack instead of reference
+        return backtrack(board)
                                 
 
 
