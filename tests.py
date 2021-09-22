@@ -63,18 +63,21 @@ class TestSolve(unittest.TestCase):
         solvable = api_board_easy.solve()
         end = time()
         print(f" test_easy time: {end - start} \n")
+        self.assertEqual(solvable, True, "Should be True")
 
     def test_medium(self):
         start = time()
         solvable = api_board_medium.solve()
         end = time()
         print(f" test_medium time: {end - start} \n")
+        self.assertEqual(solvable, True, "Should be True")
 
     def test_hard(self):
         start = time()
         solvable = api_board_hard.solve()
         end = time()
         print(f" test_hard time: {end - start} \n")
+        self.assertEqual(solvable, True, "Should be True")
 
 
 if __name__ == '__main__':
