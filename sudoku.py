@@ -1,16 +1,19 @@
 import copy
+import requests
+
 
 
 class Sudoku:
 
     board = None
 
-    def __init__(self, board_str=None):
+    def __init__(self, board_str=None, difficulty="easy"):
         if board_str:
             self.board = [list(row) for row in board_str]  # build board from specified string
             self.size = len(board_str)
         else:
-            self.board = [[0] * 9 for i in range(9)]  # blank sudoku board
+            response = requests.get(f"https://sugoku.herokuapp.com/board?difficulty={difficulty}")
+            self.board = response.json()['board']
 
     def __repr__(self):
         s = ''
@@ -62,7 +65,7 @@ class Sudoku:
                         if pos_vals:
                             return any([backtrack(board_update(x, r, c, board)) for x in pos_vals])
                         else:
-                            return False, None
+                            return False
             self.board = board
             return True
 
