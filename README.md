@@ -7,5 +7,8 @@ Input board in this format with empty cells as 0's:
 
 Display board:
 
+![display board](https://github.com/ryan-shnitman/sudoku-solver/blob/main/imgs/cap2.PNG?raw=true)
+
 Solve the board:
 
+![solved baord](https://github.com/ryan-shnitman/sudoku-solver/blob/main/imgs/cap3.PNG?raw=true)
