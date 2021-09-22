@@ -6,6 +6,8 @@ Input board in this format with empty cells as 0's:
 
 ![input string](https://github.com/ryan-shnitman/sudoku-solver/blob/main/imgs/Capture.PNG?raw=true)
 
+or specify a difficulty (default is easy)
+
 Display board:
 
 ![display board](https://github.com/ryan-shnitman/sudoku-solver/blob/main/imgs/cap2.PNG?raw=true)
