@@ -1,11 +1,10 @@
 ### Todo
 
+  - [ ] add checker toggle feature
   - [ ] add autosolve feature
-  - [ ] incorporate backtrack visualization in autosolve
 
 ### In Progress
-- [ ] do some refactoring of sudoku-gui.py
-- [ ] highlight when user clicks an alterable cell
+
 
 ### Done ✓
 
@@ -14,4 +13,5 @@
 - [x] add connection to random board api
 - [x] replace main with unit tests
 - [x] Make readme more visually appealing and add info
-- [x] create pygame sudoku game where user can edit cells 
+- [x] create pygame sudoku game where user can edit cells
+- [x] appropriate highlighting
