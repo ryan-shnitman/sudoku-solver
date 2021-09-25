@@ -1,15 +1,11 @@
 ### Todo
 
-  - [ ] create pygame sudoku game where user can edit cells
   - [ ] add autosolve feature
   - [ ] incorporate backtrack visualization in autosolve
-  - [ ] add pygame tutorail files to repo  
 
 ### In Progress
-
-- [ ] Understand pygame
-- [x] Create pygame GUI to display board
-- [ ] allow user to edit cells
+- [ ] do some refactoring of sudoku-gui.py
+- [ ] highlight when user clicks an alterable cell
 
 ### Done ✓
 
@@ -17,4 +13,5 @@
 - [x] sudoku board can be solved with backtrack algorithm and final board displayed
 - [x] add connection to random board api
 - [x] replace main with unit tests
-- [x] Make readme more visually appealing and add info 
+- [x] Make readme more visually appealing and add info
+- [x] create pygame sudoku game where user can edit cells 
